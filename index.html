@@ -2,36 +2,132 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>筋トレ管理</title>
+    <title>食費実績</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
+<style>
+    body {
+      font-family: sans-serif;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    .number-input {
+      display: flex;
+      align-items: center;
+    }
+    
+    .number-input input[type="text"] {
+      flex-grow: 1;
+      text-align: left;
+    }
+    
+    .number-input button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: #eee;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .number-input button:hover {
+      background-color: #ddd;
+    }
+    
+    .date-input {
+      position: relative;
+    }
+    
+    .date-input input[type="text"] {
+      padding-right: 40px;
+    }
+    
+    .date-input button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .button-group button {
+      padding: 10px 15px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+    
+    .button-group button:hover {
+      background-color: #eee;
+    }
+</style>
 <body>
 
-    <form class="w-75 mx-auto">
-        <p class="mt-3">名前</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
-        </div>
-        <p class="mt-3">腕立て</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="udetate" required>
-        </div>
-        <p class="mt-3">腹筋</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="fukkin" required>
-        </div>
-        <p class="mt-3">背筋</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="haikin" required>
-        </div>
-        <p class="mt-3">スクワット</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="sukuwat" required>
-        </div>
-        <input type="submit" class="mt-4 btn btn-primary" value="送信">
-    </form>
+  <div class="form-group">    
+      <label for="no">No
+          <span style="color: red;">*</span>
+      </label>    
+      <div class="number-input">      
+          <input type="text" id="no" value="312">      
+          <button>-</button>      <button>+</button>    
+      </div>  
+  </div>
+  <div class="form-group">    
+      <label for="date">年月日
+          <span style="color: red;">*</span>
+      </label>    
+      <div class="date-input">      
+          <input type="text" id="date" value="2025/04/14">      
+          <button> </button>    
+      </div>  
+  </div>
+  <div class="form-group">    
+      <label for="location">どこで</label>    
+      <input type="text" id="location">  
+  </div>
+  <div class="form-group">    
+      <label for="amount">金額
+          <span style="color: red;">*</span>
+      </label>    
+      <div class="number-input">      
+          <input type="text" id="amount" value="0">      
+          <button>-</button>      
+          <button>+</button>    
+      </div>  
+  </div>
+        
+  <div class="form-group">    
+      <label>使い道
+          <span style="color: red;">*</span>
+      </label>    
+      <div class="button-group">      
+          <button>買い物</button>      
+          <button>外食</button>      
+          <button>その他娯楽</button>    
+      </div>  
+  </div>
+</body>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
